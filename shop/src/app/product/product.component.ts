@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { AlertifyService } from '../services/alertify.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
@@ -9,83 +10,22 @@ import { AlertifyService } from '../services/alertify.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private alertifyService:AlertifyService) { }
 
+  constructor(private alertifyService: AlertifyService, private http: HttpClient) { }
+  products: Product[];
 
   title = "Product List";
-  filterText = ""
-  products: Product[] = [
-    {
-      id: 1,
-      name: "Laptop",
-      price: 2500,
-      categoryId: 1,
-      description: "Asus ZenBook",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 2,
-      name: "Mouse",
-      price: 50,
-      categoryId: 2,
-      description: "LogiTech",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 1,
-      name: "Laptop",
-      price: 2500,
-      categoryId: 1,
-      description: "Asus ZenBook",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 2,
-      name: "Mouse",
-      price: 50,
-      categoryId: 2,
-      description: "LogiTech",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 1,
-      name: "Laptop",
-      price: 2500,
-      categoryId: 1,
-      description: "Asus ZenBook",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 2,
-      name: "Mouse",
-      price: 50,
-      categoryId: 2,
-      description: "LogiTech",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 1,
-      name: "Laptop",
-      price: 2500,
-      categoryId: 1,
-      description: "Asus ZenBook",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    },
-    {
-      id: 2,
-      name: "Mouse",
-      price: 50,
-      categoryId: 2,
-      description: "LogiTech",
-      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
-    }
-  ]
+  filterText = "";
+  path = "http://localhost:3000/products"
 
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.http.get<Product[]>(this.path).subscribe(data => {
+      this.products = data;
+    });
   }
 
   addToCart(product: { name: string; }) {
-  this.alertifyService.success(product.name+ " added.");
+    this.alertifyService.success(product.name + " added.");
   }
 }
