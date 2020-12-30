@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
+declare let alertify: any;
 
 @Component({
   selector: 'app-product',
@@ -18,7 +19,7 @@ export class ProductComponent implements OnInit {
       price: 2500,
       categoryId: 1,
       description: "Asus ZenBook",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 2,
@@ -26,7 +27,7 @@ export class ProductComponent implements OnInit {
       price: 50,
       categoryId: 2,
       description: "LogiTech",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 1,
@@ -34,7 +35,7 @@ export class ProductComponent implements OnInit {
       price: 2500,
       categoryId: 1,
       description: "Asus ZenBook",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 2,
@@ -42,7 +43,7 @@ export class ProductComponent implements OnInit {
       price: 50,
       categoryId: 2,
       description: "LogiTech",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 1,
@@ -50,7 +51,7 @@ export class ProductComponent implements OnInit {
       price: 2500,
       categoryId: 1,
       description: "Asus ZenBook",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 2,
@@ -58,7 +59,7 @@ export class ProductComponent implements OnInit {
       price: 50,
       categoryId: 2,
       description: "LogiTech",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 1,
@@ -66,7 +67,7 @@ export class ProductComponent implements OnInit {
       price: 2500,
       categoryId: 1,
       description: "Asus ZenBook",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     },
     {
       id: 2,
@@ -74,7 +75,7 @@ export class ProductComponent implements OnInit {
       price: 50,
       categoryId: 2,
       description: "LogiTech",
-      imageUrl:"https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
+      imageUrl: "https://images.unsplash.com/photo-1533740566848-5f7d3e04e3d7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80"
     }
   ]
 
@@ -82,7 +83,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(product){
-    alert("Added to Cart: " + product.name);
+  addToCart(product: { name: string; }) {
+    alertify.success("Added");
   }
 }
