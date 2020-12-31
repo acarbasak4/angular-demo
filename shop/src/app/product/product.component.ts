@@ -12,7 +12,6 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductComponent implements OnInit {
 
-
   constructor(private alertifyService: AlertifyService, private ProductService: ProductService) { }
   title = "Product List";
   filterText = "";
@@ -22,7 +21,6 @@ export class ProductComponent implements OnInit {
     this.ProductService.getProducts().subscribe(data => {
       this.products = data;
     })
-
   }
 
   addToCart(product: { name: string; }) {
