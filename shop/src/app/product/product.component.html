@@ -1,5 +1,5 @@
-<h3 *ngIf="products; else noProduct">{{ title }}</h3>
-
+<!-- <h3 *ngIf="products; else noProduct">{{ title }}</h3> -->
+<app-category></app-category>
 <div class="form-group">
     <input
     class="form-control"
@@ -7,9 +7,8 @@
     placeholder="Search..."
     [(ngModel)] = "filterText"
   />
-  <small *ngIf="filterText" class="form-text text-muted"
-    > <strong>{{filterText}}</strong>  searched.   </small
-  >
+  <small *ngIf="filterText" class="form-text text-muted"> 
+    <strong>{{filterText}}</strong>  searched. </small>
 </div>
 
 <div class="row">
@@ -17,7 +16,7 @@
     <div class="alert alert-primary" role="alert">This category is empty!</div>
   </ng-template>
 
-  <div *ngFor="let product of products | productFilter:filterText" class="card" style="width: 18rem">
+  <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox" style=" width: 18rem">
     <img [src]="product.imageUrl" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">
